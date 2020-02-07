@@ -4,6 +4,11 @@
 */
 function mostrar()
 {
+	var dato;
+
+	dato = prompt ("Ingrese un dato"); // Es una ventana que me permite obtener informacion
+
+	document.getElementById("elNombre").value = dato;
 
 }
 

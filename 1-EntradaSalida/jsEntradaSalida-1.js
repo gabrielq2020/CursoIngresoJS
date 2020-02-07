@@ -1,10 +1,10 @@
 //Debemos lograr mostrar un mensaje al presionar el botón  'mostrar'.
 function mostrar()
 {
-	// 	Comentario unilinea
+	// 	Comentario unilinea - Toda esta linea es comentario
 
 	/*
-		Comentario multilinea
+		Comentario multilinea - Todo lo que este entre barras es comentario
 	*/
 	
 	var texto;
