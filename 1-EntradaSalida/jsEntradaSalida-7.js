@@ -2,16 +2,18 @@
 transformarlos a enteros (parseInt),realizar la operación correcta y 
 mostrar el resulto por medio de "ALERT"
 ej.: "la Resta es 750"*/ 
-function sumar()
-{	
 
-	//Declaracion de variables
+    //Declaracion de variables globales
     var numeroUnoIngresado;
     var numeroDosIngresado;
     var numeroUnoParseado;
     var numeroDosParseado;
     var resultado;
-    
+
+
+function sumar()
+{	
+   
     //Obtener los valores por Id
     numeroUnoIngresado = document.getElementById("numeroUno").value;    //Dato = STRING
     numeroDosIngresado = document.getElementById("numeroDos").value;    //Dato = STRING
@@ -32,13 +34,7 @@ function sumar()
 
 function restar()
 {
-    //Declaracion de variables
-    var numeroUnoIngresado;
-    var numeroDosIngresado;
-    var numeroUnoParseado;
-    var numeroDosParseado;
-    var resultado;
-    
+        
     //Obtener los valores por Id
     numeroUnoIngresado = document.getElementById("numeroUno").value;    //Dato = STRING
     numeroDosIngresado = document.getElementById("numeroDos").value;    //Dato = STRING
@@ -59,13 +55,6 @@ function restar()
 
 function multiplicar()
 {
-
-    //Declaracion de variables
-    var numeroUnoIngresado;
-    var numeroDosIngresado;
-    var numeroUnoParseado;
-    var numeroDosParseado;
-    var resultado;
     
     //Obtener los valores por Id
     numeroUnoIngresado = document.getElementById("numeroUno").value;    //Dato = STRING
@@ -87,13 +76,6 @@ function multiplicar()
 
 function dividir()
 {
-
-    //Declaracion de variables
-    var numeroUnoIngresado;
-    var numeroDosIngresado;
-    var numeroUnoParseado;
-    var numeroDosParseado;
-    var resultado;
     
     //Obtener los valores por Id
     numeroUnoIngresado = document.getElementById("numeroUno").value;    //Dato = STRING
