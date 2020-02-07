@@ -17,7 +17,7 @@ function mostrarAumento()
     importeParseado = parseInt(ingreseImporte);
 
     //Operacion
-    resultado = importeParseado * 0.25;
+    resultado = importeParseado * 0.75;
 
     //Mostrar resultado en caja RESULTADO
     document.getElementById("resultado").value = resultado;
