@@ -11,8 +11,6 @@ var precioUnoParseo;
 var precioDosParseo;
 var precioTresParseo;
 var suma;
-var promedio;
-var iva;
 
 function Sumar () 
 {    
@@ -36,6 +34,9 @@ function Sumar ()
 
 function Promedio () 
 {
+    //Declaracion de variables
+    var promedio;
+
     //Obtencion de dato por Id
     precioUno = document.getElementById("PrecioUno").value;
     precioDos = document.getElementById("PrecioDos").value;
@@ -58,6 +59,9 @@ function Promedio ()
 
 function PrecioFinal () 
 {
+    //Declaracion de variables
+    var iva;
+
     //Obtencion de datos por Id
     precioUno = document.getElementById("PrecioUno").value;
     precioDos = document.getElementById("PrecioDos").value;
