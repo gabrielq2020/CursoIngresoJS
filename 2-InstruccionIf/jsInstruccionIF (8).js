@@ -14,7 +14,7 @@ ingreseEstado = document.getElementById("estadoCivil").value;
     }
 */
 
-if(ingreseEstado == "Soltero" && ingreseEdad >=18){
+if(ingreseEdad >=18 && ingreseEstado == "Soltero"){
     alert("Es soltero y no es menor");
 }	
 
