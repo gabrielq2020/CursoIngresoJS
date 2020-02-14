@@ -18,9 +18,7 @@ function mostrar()
 		if (numeroRandom >=4) {
 			alert("APROBÓ");
 		} else {
-			if(numeroRandom <4){
-				alert("Vamos, la proxima se puede")
-			}
+			alert("Vamos, la proxima se puede")
 		}
 	}
 
