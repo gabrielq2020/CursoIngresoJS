@@ -9,11 +9,17 @@ de no ser igual se debe informar si “falta…”  para llegar al número secre
 */
 var numeroSecreto; 
 var contadorIntentos;
+var max;
+var min;
 
 function comenzar()
 {
-	//Genero el número RANDOM entre 1 y 100
-	 
+  //Genero el número RANDOM entre 1 y 100
+  max = 101;
+  min = 1;
+  numeroSecreto = Math.floor(Math.random() * (max - min)) + min;
+  console.log(numeroSecreto);
+
 		//alert(numeroSecreto );
 	
 
