@@ -8,25 +8,25 @@ secreto del 1 al 100, en la pantalla del juego
 de no ser igual se debe informar si “falta…”  para llegar al número secreto  o si “se pasó…”  del número secreto.
 */
 var numeroSecreto;
-var numeroIngresado;
-var contador; 
-var contadorIntentos;
-var max;
-var min;
+var contadorIntentos = 0;
 
-contador = 1;
+
+
 
 
 function comenzar()
 {
+  var max;
+  var min;
+  
   //Generar número RANDOM entre 1 y 100
   max = 101;
   min = 1;
+
   numeroSecreto = Math.floor(Math.random() * (max - min)) + min;
   console.log(numeroSecreto);
 
-  //Obtener datos por Id
-  numeroIngresado = document.getElementById("numero").value;
+ 
   
 }
 
@@ -35,22 +35,29 @@ function comenzar()
 
 function verificar()
 {
+  var numeroIngresado;
+  var contador; 
+  
+  contadorIntentos = contadorIntentos + 1;
+  console.log(contadorIntentos);
+  
+  document.getElementById("intentos").value = contadorIntentos;
+  
+  //Obtener datos por Id
+  numeroIngresado = document.getElementById("numero").value;
+  
   //Comparar el numero ingresado con el numero random
   if (numeroIngresado == numeroSecreto) {
-    alert("Usted es un ganador y en solo " + " intentos");
+    alert("Usted es un ganador y en solo " + contadorIntentos + " intentos");
   } else {
-    if (numeroIngresado <= numeroSecreto) {
-      alert("Falta para llegar al numero secreto");
-      contadorIntentos = contador + 1;
-      document.getElementById("intentos").value = contadorIntentos;
-    }/* else {
+    if (numeroIngresado > numeroSecreto) {
       alert("Se paso del numero secreto");
-      contadorIntentos = contador + 1;
-      document.getElementById("intentos").value = contadorIntentos;
-
-     
+    } else {
+      alert("Falta para llegar al numero secreto"); 
     }
-    */
+    
+    
+
   }
 	
 }
