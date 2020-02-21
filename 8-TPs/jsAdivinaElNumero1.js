@@ -11,9 +11,6 @@ var numeroSecreto;
 var contadorIntentos = 0;
 
 
-
-
-
 function comenzar()
 {
   var max;
@@ -25,22 +22,18 @@ function comenzar()
 
   numeroSecreto = Math.floor(Math.random() * (max - min)) + min;
   console.log(numeroSecreto);
-
- 
-  
 }
-
-
 
 
 function verificar()
 {
   var numeroIngresado;
-  var contador; 
-  
+    
+  //Acumular en contadorIntentos la cantidad de intentos
   contadorIntentos = contadorIntentos + 1;
   console.log(contadorIntentos);
   
+  //Mostrar la cantidad de intentos en pantalla
   document.getElementById("intentos").value = contadorIntentos;
   
   //Obtener datos por Id
@@ -55,9 +48,6 @@ function verificar()
     } else {
       alert("Falta para llegar al numero secreto"); 
     }
-    
-    
-
   }
 	
 }

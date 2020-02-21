@@ -2,12 +2,15 @@ function mostrar()
 {
 	var numeroDescendente = 11;
 	
-	while (numeroDescendente > 1) {
+	/*while (numeroDescendente > 1) {
 		numeroDescendente--;
 		console.log(numeroDescendente);
-		//alert(numeroDescendente);
-	}
+	}*/
 	
+	do {
+		numeroDescendente--;
+		console.log(numeroDescendente);
+	} while (numeroDescendente > 1);
 
 	// Otra opcion - Lo que vale aca es cuantas veces iteramos
 	/*
