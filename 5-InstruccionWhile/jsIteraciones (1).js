@@ -10,6 +10,7 @@ function mostrar()
 	do {
 		numeroAscendente++;
 		console.log(numeroAscendente);
+		alert(numeroAscendente);
 	} while (numeroAscendente < 10);
 
 }//FIN DE LA FUNCIÓN

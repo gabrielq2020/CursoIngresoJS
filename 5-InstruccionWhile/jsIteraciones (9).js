@@ -38,11 +38,6 @@ function mostrar()
 				minimo = numero;
 			}
 		}
-
-		
-
-		
-		
 	
 	}
 
@@ -51,3 +46,154 @@ function mostrar()
 
 
 }//FIN DE LA FUNCIÓN
+
+
+	//OPCION 2
+	/* var contador = 0;
+	var respuesta = 'si';
+
+	while (respuesta=="si")
+	{
+		//Solicito que ingrese un numero
+		numero = prompt("Ingrese un numero: ");
+		numero = parseInt(numero);
+
+		//Pregunto si quiero seguir ingresando numeros
+		respuesta = prompt("Desea ingresar otro numero?");
+		respuesta = respuesta.toLowerCase();	//Convertir el STRING a minuscula
+		//Si ingreso cualquier valor que no sea SI corta el proceso y eso esta mal
+	} */
+
+
+	//OPCION 3
+	var contador = 0;		//LO VOY A UTILIZAR PARA SABER SI ES EL PRIMER NUMERO QUR INGRESO
+	var respuesta = true;
+	var maximo;
+	var minimo;
+
+	while (respuesta==true) 
+	{
+		//Solicito que ingrese un numero
+		numero = prompt("Ingrese un numero: ");
+		numero = parseInt(numero);
+
+		if (contador==0)	//Inicializo el maximo y minimo con el primer numero ingresado
+		{
+			maximo = numero;
+			minimo = numero;	
+		}
+		else
+		{
+			if(numero>maximo)	//Si el segundo numero ingresado es mayor al primero pasa a ser maximo
+			{
+				maximo = numero
+			}
+			else
+			{
+				if (numero<minimo)	//Si el segundo numero ingresado es menor al primero pasa a ser minimo
+				{
+					minimo = numero;	
+				}
+			}
+		}
+
+		contador++;
+
+		//Pregunto si quiero seguir ingresando numeros
+		respuesta = confirm("Desea ingresar otro numero?"); //Aceptar devuelve TRUE y Cancelar FALSE
+
+		//Mostrar en pantalla maximo y minimo
+		document.getElementById("maximo").value = maximo;
+		document.getElementById("minimo").value = minimo;
+	
+	}
+
+
+	//OPCION 4
+	var flag = true;		//LO VOY A UTILIZAR PARA SABER SI ES EL PRIMER NUMERO QUR INGRESO
+	var numero;
+	var respuesta = true;
+	var maximo;
+	var minimo;
+
+	while (respuesta==true) 
+	{
+		//Solicito que ingrese un numero
+		numero = prompt("Ingrese un numero: ");
+		numero = parseInt(numero);
+
+		if (flag==true)	//Pregunto a la bandera si ya se cargo alguna vez un numero
+		{
+			maximo = numero;
+			minimo = numero;	
+		}
+		else
+		{
+			if(numero>maximo)	//Si el segundo numero ingresado es mayor al primero pasa a ser maximo
+			{
+				maximo = numero
+			}
+			else
+			{
+				if (numero<minimo)	//Si el segundo numero ingresado es menor al primero pasa a ser minimo
+				{
+					minimo = numero;	
+				}
+			}
+		}
+
+		flag = false;
+
+		//Pregunto si quiero seguir ingresando numeros
+		respuesta = confirm("Desea ingresar otro numero?"); //Aceptar devuelve TRUE y Cancelar FALSE
+
+		//Mostrar en pantalla maximo y minimo
+		document.getElementById("maximo").value = maximo;
+		document.getElementById("minimo").value = minimo;
+	
+	}
+
+
+
+	//OPCION 5
+	var flag = true;		//LO VOY A UTILIZAR PARA SABER SI ES EL PRIMER NUMERO QUR INGRESO
+	var numero;
+	var respuesta = true;
+	var maximo;
+	var minimo;
+
+	while (respuesta==true) 
+	{
+		//Solicito que ingrese un numero
+		numero = prompt("Ingrese un numero: ");
+		numero = parseInt(numero);
+
+		while(isNaN(numero) || (numero < 1 || numero > 10)) //Pregunto en la condicion lo que NO quiero que ocurra			
+		{
+			numero = prompt("Reingrese un numero: ");
+			numero = parseInt(numero);
+		}
+
+		if(flag == true || numero>maximo)	//Si el segundo numero ingresado es mayor al primero pasa a ser maximo
+		{	//La primera vez el flag es true y no importa la otra comparacion, la segunda vez flag es false
+			//y ahi va a comparar el primer numero ingresado con el segundo si es mayor
+			maximo = numero;
+		}
+		if (falg == true || numero<minimo)	//Si el segundo numero ingresado es menor al primero pasa a ser minimo
+		{	////La primera vez el flag es true y no importa la otra comparacion, la segunda vez flag es false
+			//y ahi va a comparar el primer numero ingresado con el segundo si es menor
+			minimo = numero;	
+		}
+			
+		flag = false;
+
+		//Pregunto si quiero seguir ingresando numeros
+		respuesta = confirm("Desea ingresar otro numero?"); //Aceptar devuelve TRUE y Cancelar FALSE
+
+	}
+
+		//Mostrar en pantalla maximo y minimo
+		document.getElementById("maximo").value = maximo;
+		document.getElementById("minimo").value = minimo;
+	
+	

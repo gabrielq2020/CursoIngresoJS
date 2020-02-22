@@ -1,0 +1,26 @@
+PARA RANGOS DE NUMEROS > IF
+
+PARA COMPARAR NUMEROS Y LETRAS > SWITCH
+
+whiles (condicion tiene que ser veradadera para ejecutar el codigo)
+{
+
+	//Tengo que programar algo para que la condicion cambie a falsa, sino se genera un bucle infinito
+	//y no salgo nunca del while
+
+}
+
+
+Todos los contadores los debo inicializar siempre para marcar desde donde quiero contar, por lo general en cero
+
+La asignacion a una variable es destructiva > contador = 1 > piso con el uno el valor anterior
+
+Los contadores suman valores constantes, los acumuladores suman valores variables (Ej: la tarjeta sube)
+
+Cualquier operacion con operador logico, suma, resta, etc  consume recursos de la pc > buscar el dato en memoria,
+realizar la operacion y devolver el resultado
+
+Eficacia no importa el medio, si el resultado
+
+Eficencia importa el medio y el resultado
+
