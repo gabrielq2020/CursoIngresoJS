@@ -66,7 +66,7 @@ function mostrar()
 
 
 	//OPCION 3
-	var contador = 0;		//LO VOY A UTILIZAR PARA SABER SI ES EL PRIMER NUMERO QUR INGRESO
+	var contador = 0;		//LO VOY A UTILIZAR PARA SABER SI ES EL PRIMER NUMERO QUE INGRESO
 	var respuesta = true;
 	var maximo;
 	var minimo;

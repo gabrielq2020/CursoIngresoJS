@@ -34,7 +34,7 @@ function verificar()
   console.log(contadorIntentos);
   
   //Mostrar la cantidad de intentos en pantalla
-  document.getElementById("intentos").value = contadorIntentos;
+  document.getElementById("intentos").value = "Cantidad de intentos: " + contadorIntentos;
   
   //Obtener datos por Id
   numeroIngresado = document.getElementById("numero").value;

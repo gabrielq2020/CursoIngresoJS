@@ -6,10 +6,11 @@ y una de las cuatro operaciones básicas (suma, resta,
  el resultado de la operación y presionar el botón Aceptar.
 se debe informar si el resultado es el correcto o no.
 */
-var respuesta;
+var resultado;
 var numeroRandom1;
 var numeroRandom2;
 var operacionRandom;
+var resultado;
 
 
 function comenzar()
@@ -57,24 +58,33 @@ function comenzar()
 }//FIN DE LA FUNCIÓN
 function Responder()
 {
+    //Operacion
     switch (operacionRandom) {
         case 1: //Suma
-            respuesta = numeroRandom1 + numeroRandom2;
+            resultado = numeroRandom1 + numeroRandom2;
             break;
 
         case 2: //Resta
-            respuesta = numeroRandom1 - numeroRandom2;
+            resultado = numeroRandom1 - numeroRandom2;
             break;
 
         case 3: //Multiplicacion
-            respuesta = numeroRandom1 * numeroRandom2;
+            resultado = numeroRandom1 * numeroRandom2;
             break;
 
         case 4: //Division
-            respuesta = numeroRandom1 / numeroRandom2;
+            resultado = numeroRandom1 / numeroRandom2;
             break;
     }
 
+    //Obtener respuesta del usuario por id
     respuesta = document.getElementById("Respuesta").value;
+
+    //Comparar respuesta con resultado y mostrar en pantalla
+    if (respuesta == resultado) {
+        alert("Su respuesta es correcta.");
+    } else {
+        alert("Su respuesta es incorrecta, vuelva a intentarlo.");
+    }
 
 }//FIN DE LA FUNCIÓN
