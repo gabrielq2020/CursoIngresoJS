@@ -18,15 +18,78 @@ var nacionalidad;
 
 function ComenzarIngreso () 
 {
-    //Obtener edad por id
-    document.getElementById("Edad").value = prompt("Ingrese su edad.");
+    //Obtener edad por prompt
+    edad = prompt("Ingrese edad.");
+    edad = parseInt(edad);
+    document.getElementById("Edad").value = "Edad: " + edad;    
 
+    //Validar edad
     while (isNaN(edad) || (edad < 18 || edad > 90)) {
-        //document.getElementById("Edad").value = prompt("Ingrese su edad (Solo numeros y ademas usted debe tener entre 18 y 90 años).");
-        edad = prompt("Ingrese su edad (Solo numeros y ademas usted debe tener entre 18 y 90 años).");
+        edad = prompt("Ingrese su edad (Solo numeros y debe tener entre 18 y 90 años).");
+        document.getElementById("Edad").value = "Edad: " + edad;
         edad = parseInt(edad);
     }
     
+    //Obtener sexo prompt
+    sexo = prompt("Ingrese sexo.");
+    sexo = sexo.toUpperCase();
+
+    //Mostrar sexo en pantalla
+    if (sexo == "F") {
+        document.getElementById("Sexo").value = "Sexo: femenino"
+    } else {
+        document.getElementById("Sexo").value = "Sexo: masculino"
+    }
+
+    //Validar sexo
+    while (!isNaN(sexo) || (sexo != "F" && sexo != "M")) {
+        sexo = prompt("Ingrese F para femenino o M para masculino.")
+        sexo = sexo.toUpperCase();
+        if (sexo == "F") {
+            document.getElementById("Sexo").value = "Sexo: femenino"
+        } else {
+            document.getElementById("Sexo").value = "Sexo: masculino"
+        }
+    }
+
+    //Obtener estado civil por prompt
+    estadoCivil = prompt("Ingrese estado civil: 1 si es soltero, 2 si es casado, 3 si es divorciado o 4 si es viudo.");
+
+    //Validar estado civil
+    estadoCivil = parseInt(estadoCivil);
+
+    while (isNaN(estadoCivil) || estadoCivil < 1 || estadoCivil > 4) {
+        estadoCivil = prompt("Ingrese estado civil: 1 si es soltero, 2 si es casado, 3 si es divorciado o 4 si es viudo.");
+        estadoCivil = parseInt(estadoCivil);
+    }
+
+    //Mostrar en pantalla estado civil
+    switch (estadoCivil) {
+        case 1:
+            document.getElementById("EstadoCivil").value = "Estado civil: soltero."
+            break;
+        case 2:
+            document.getElementById("EstadoCivil").value = "Estado civil: casado."
+            break;
+        case 3:
+            document.getElementById("EstadoCivil").value = "Estado civil: divorciado."
+            break;
+        case 4:
+            document.getElementById("EstadoCivil").value = "Estado civil: viudo."
+            break;
+    }
+
+    //Obtener sueldo bruto por prompt
+    sueldo = prompt("Ingrese sueldo");
+    sueldo = parseInt(sueldo);
+    document.getElementById("Sueldo").value = "Sueldo: " + sueldo;
+
+    //Validar sueldo
+    while (isNaN(sueldo) || sueldo < 8000) {
+        sueldo = prompt("El sueldo debe estar expresado en numero y ademas debe ser mayor a 8000.");
+        sueldo = parseInt(sueldo);
+        document.getElementById("Sueldo") = "Sueldo: " + sueldo;
+    }
 
 
 }
