@@ -32,9 +32,9 @@ function verificar()
 	numeroIngresado = parseInt(numeroIngresado);
 	console.log(numeroIngresado);
 	
-	while (isNaN(numeroIngresado)/* || (numeroIngresado < 1 || numeroIngresado > 100)*/)
+	while (isNaN(numeroIngresado) || (numeroIngresado < 1 || numeroIngresado > 100))
 	{
-		numeroIngresado = prompt("Por favor ingrese un numero válido.");
+		numeroIngresado = prompt("ERROR: Por favor ingrese un numero entre 1 y 100.");
 		numeroIngresado = parseInt(numeroIngresado);
 	}
 	
@@ -42,41 +42,49 @@ function verificar()
 	contadorIntentos++;
 	console.log(contadorIntentos);
 
+	//Mostrar cantidad de intentos
+	document.getElementById("intentos").value = "Intentos: " + contadorIntentos;
+
 	//Operacion
 	if (numeroRandom == numeroIngresado)
 	{
 		switch (contadorIntentos)
 		{
 			case 1:
-				document.getElementById("intentos").value = "Adivino en solo 1 intento, usted es un Psíquico.";
+				alert("Adivino en solo 1 intento, usted es un Psíquico.");
 				break;
 			case 2:
-				document.getElementById("intentos").value = "Adivino en 2 intentos, excelente percepción.";
+				alert("Adivino en 2 intentos, excelente percepción.");
 				break;
 			case 3:
-				document.getElementById("intentos").value = "Adivino en 3 intentos, esto es suerte.";
+				alert("Adivino en 3 intentos, esto es suerte.");
 				break;
 			case 4:
-				document.getElementById("intentos").value = "Adivino en 4 intentos, excelente técnica.";
+				alert("Adivino en 4 intentos, excelente técnica.");
 				break;
 			case 5:
-				document.getElementById("intentos").value = "Adivino en 5 intentos, usted está en la media.";
+				alert("Adivino en 5 intentos, usted está en la media.");
 				break;
 			case 6:
 			case 7:
 			case 8:
 			case 9:
 			case 10:			
-				document.getElementById("intentos").value = "Adivino en " + contadorIntentos + " intentos, le falta técnica.";
+				alert("Adivino en " + contadorIntentos + " intentos, le falta técnica.");
 				break;
 			default:
-				document.getElementById("intentos").value = "Adivino mas de " + contadorIntentos + " intentos, es un afortunado en el amor.";
+				alert("Adivino mas de " + contadorIntentos + " intentos, es un afortunado en el amor.");
 				break;
 		}
 	}
 	else
 	{
-		document.getElementById("intentos").value = "No adivino el numero,vuelva a intentarlo.";
-		
+		if (numeroIngresado < numeroRandom) {
+			alert("Por favor ingrese un numero mas grande.");
+		} else {
+			if (numeroIngresado > numeroRandom) {
+				alert("Por favor ingrese un numero mas chico.");
+			}
+		}
 	}
 }

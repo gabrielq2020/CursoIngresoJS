@@ -49,7 +49,7 @@ function comenzar()
 }//FIN DE LA FUNCIÓN
 
 //Ejecutar de forma forzada funcion Responder despues de 4 segundos
-setTimeout(Responder,4000);
+setTimeout(Responder, 4000);  //Ejecuta la funcion solo una vez
 
 function Responder()
 {

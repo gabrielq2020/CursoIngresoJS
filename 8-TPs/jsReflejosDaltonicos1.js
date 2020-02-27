@@ -9,18 +9,20 @@ mostrara el texto de un color entre los 6 posibles
 var colorSecreto;
 
 //Tomar la hora de ingreso a la página
-var tiempoInicio = Date.now();
+var tiempoInicio = new Date();
 
 function comenzar()
 {
     //Generar numero random para asignar color
+    var colorRandom;
     var max = 7;
     var min = 1;
 
-    colorSecreto = Math.floor(Math.random() * (max - min)) + min;
+    colorRandom = Math.floor(Math.random() * (max - min)) + min;
+
 
     //Mostrar color en pantalla
-    switch (colorSecreto) {
+    /*switch (colorSecreto) {                                             //Switch es una igualdad estricta
         case 1: //Azul
             document.getElementById("ColorElejido").value = "Azul";
             break;
@@ -40,17 +42,71 @@ function comenzar()
             document.getElementById("ColorElejido").value = "Rojo";
             break;
     }
+*/
+
+
+    //Mostrar color en pantalla
+    switch (colorRandom) {                                             //Switch es una igualdad estricta
+        case 1: //Azul
+            colorSecreto = "azul";
+            break;
+        case 2: //Amarillo
+            colorSecreto = "amarillo";
+                break;
+        case 3: //Marron
+            colorSecreto = "marron";
+            break;
+        case 4: //Verde
+            colorSecreto = "verde";
+            break;
+        case 5: //Celeste
+            colorSecreto = "celeste";
+            break;
+        case 6: //Rojo
+            colorSecreto = "rojo";
+            break;
+    }
+	
+    //Mostrar color en pantalla
+    document.getElementById("ColorElejido").value = colorSecreto;
+
+
 	
 
 }//FIN DE LA FUNCIÓN
 
 function Responder(colorParametro)
 {
+    //Declaro las variables para calcular los segundos tardados
+    var tiempoFin;
+    var tiempoTotal;
+
+    //Capturo la hora cuando se haya presionado un boton
+    tiempoFin = new Date();
+
+    //Calculo los segundos que se tardo en presionar el boton
+    tiempoTotal = tiempoFin - tiempoInicio;
+
+    //Paso el tiempo total a segundos
+    tiempoTotal /= 1000;
+
     //Validar el color ingresado
+    console.log(colorParametro);
+    console.log(tiempoTotal);
+    
+    //Validar el color
+    if (colorParametro == colorSecreto) {
+        console.log("gano");
+        alert("Gano y tardo " + tiempoTotal + " segundos.");
+        comenzar();
+    } else {
+        alert("Ese no es el color correcto, vuelva a intentarlo.");
+    }
 
-    //FALTA CODIGO PARA VALIDAR COLOR!!!
 
-    //Tomar la hora una vez presionado el boton de color
+
+
+    /*//Tomar la hora una vez presionado el boton de color
     var tiemporFin = Date.now();
 
     //Calcular cuanto se tardo en adivinar el color
@@ -64,7 +120,7 @@ function Responder(colorParametro)
     tiempoDiferencia = Math.floor(tiempoDiferencia); 
 
     //Mostrar el resultado en pantalla
-    alert("Usted tardo " + tiempoDiferencia + " segundos en adivinar el color.");
+    alert("Usted tardo " + tiempoDiferencia + " segundos en adivinar el color.");*/
 	
 
 

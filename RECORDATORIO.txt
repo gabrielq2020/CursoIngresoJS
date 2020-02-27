@@ -1,3 +1,5 @@
+CLASE - SABADO 22-02-20
+
 PARA RANGOS DE NUMEROS > IF
 
 PARA COMPARAR NUMEROS Y LETRAS > SWITCH
@@ -24,3 +26,29 @@ Eficacia no importa el medio, si el resultado
 
 Eficencia importa el medio y el resultado
 
+
+CLASE 7 - 26-02-20
+
+ALT + SHIFT + F - ACOMODAR TABS
+
+ALT + Z - CORTAR RENGLON
+
+
+numero %2 == 0		PARA SABER SI ES NUMERO PAR
+
+
+for (declaracion (1) ; condicion (2); modificacion de la variable declarada (3)){
+
+
+}
+
+for (var cont = 0, var cont2 = 0 ; cont < 10; cont++){
+
+
+}
+
+//(1) - declara la variable por unica vez
+
+//(2) - ejecuta el codigo mientras se cumpla la condicion
+
+//(3) - modifica la variable 

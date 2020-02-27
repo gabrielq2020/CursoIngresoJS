@@ -80,9 +80,14 @@ function Responder()
     //Obtener respuesta del usuario por id
     respuesta = document.getElementById("Respuesta").value;
 
+    //Validar respuesta
+    respuesta = parseInt(respuesta);
+
     //Comparar respuesta con resultado y mostrar en pantalla
     if (respuesta == resultado) {
         alert("Su respuesta es correcta.");
+        comenzar(); //Vuelvo a iniciar
+        document.getElementById("Respuesta").value = "";
     } else {
         alert("Su respuesta es incorrecta, vuelva a intentarlo.");
     }

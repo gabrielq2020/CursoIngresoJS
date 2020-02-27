@@ -9,5 +9,58 @@ e.	Se pedirán un número positivo y se mostrará la cantidad de números Primos
 */
 function ComenzarIngreso () 
 {
- 	
+    //Declarar variable
+    var numeroIngresado;
+
+    //Solicitar numero por prompt
+    numeroIngresado = document.getElementById("numero").value;
+    numeroIngresado = parseInt(numeroIngresado);
+
+    //Validar el dato ingresado
+    while (isNaN(numeroIngresado) || numeroIngresado > 0) {
+        numeroIngresado = prompt("ERROR: Ingresar solo numeros positivos");
+        numeroIngresado = parseInt(numeroIngresado);
+
+    }
+
 }
+
+function NumerosPares ()
+{
+    var contadorPar = 0;
+
+    if (numeroIngresado % 2 == 0) {
+        contadorPar++;
+    }
+}
+
+function NumerosImpares ()
+{
+    var contadorImpar = 0;
+    
+    if (numeroIngresdo % 2 != 0) {
+        contadorImpar++;
+    }
+}
+
+function NumerosDivisibles ()
+{
+
+
+
+}
+
+function VerificarPrimos ()
+{
+
+
+
+}
+
+function NumerosPrimos ()
+{
+
+
+
+}
+

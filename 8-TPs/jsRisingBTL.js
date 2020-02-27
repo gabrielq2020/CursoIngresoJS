@@ -91,5 +91,16 @@ function ComenzarIngreso ()
         document.getElementById("Sueldo") = "Sueldo: " + sueldo;
     }
 
+    //Obtener legajo por prompt
+    legajo = prompt("Ingrese legajo");
+    legajo = parseInt(legajo);
+    document.getElementById("Legajo").value = "Legajo: " + legajo;
+
+    //Validar legajo
+    while (isNaN(legajo) || (legajo < 1000 || legajo > 10000)) {
+        legajo = prompt("ERROR: El legajo ingresado debe ser entre 1000 y 9999.");
+        legajo = parseInt(legajo);
+        document.getElementById("legajo").value = legajo;
+    }
 
 }
