@@ -8,10 +8,10 @@ function mostrar()
   var cantidadDeDiasDeEstadia;
   var formaDePago;
 
-
+  //Variables para realizar calculos
   var maximoCantidadDePersonas;
   var maximoNombreHuesped;
-
+  
   var contadorPago;
   var acumuladorDeDias = 0;
   var contadorDias = 0;
@@ -107,7 +107,7 @@ function mostrar()
       formaDePagoMasUsada = "efectivo";
       }
     }
-  }
+  
 
   //Mostrar informacion por document write
   document.write("El huesped llamado " + maximoNombreHuesped + " trajo al mayor numero de huespedes: " + maximoCantidadDePersonas + "<br>");
