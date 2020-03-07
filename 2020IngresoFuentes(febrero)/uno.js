@@ -22,12 +22,12 @@ function mostrar()
 	var cantidadMasCaroBarbijo;
 	var fabricanteMasCaroBarbijo;
 	var precioMasCaroBarbijo;
-	var banderaBarbijo = 0;
+	var banderaBarbijo = "no paso";
 
 	//Variables punto b)
 	var mayorCantidadUnidades;
-	var itemMasUnidades;
-	var fabricanteMasUnidades;
+	var mayorCantidadTipo;
+	var mayorCantidadFabricante;
 
 	//Variables punto c)
 	var acumuladorJabon = 0;
@@ -82,17 +82,11 @@ function mostrar()
 			fabricante = fabricante.toLowerCase();
 		}
 
-		
-		//a) Del más caro de los Barbijos, la cantidad de unidades y el fabricante
-		
-		if (tipo == "barbijo" && banderaBarbijo == 0 || precioMasCaroBarbijo < precio ) { //Si pongo < saco maximo y si pongo > saco minimo
-			banderaBarbijo++;
-			precioMasCaroBarbijo = precio;
-			cantidadMasCaroBarbijo = cantidad;
-			fabricanteMasCaroBarbijo = fabricante;
-		}
 
-		if (precioMasCaroBarbijo < precio) {
+		//a) Del más caro de los Barbijos, la cantidad de unidades y el fabricante
+
+		if (tipo == "barbijo" && banderaBarbijo == "no paso" || precioMasCaroBarbijo < precio ) { //Si pongo < saco maximo y si pongo > saco minimo
+			banderaBarbijo = "paso";
 			precioMasCaroBarbijo = precio;
 			cantidadMasCaroBarbijo = cantidad;
 			fabricanteMasCaroBarbijo = fabricante;
@@ -101,19 +95,15 @@ function mostrar()
 
 		//b) Del ítem con más unidades, el fabricante
 
-		if (contador == 1) { 
+		if (contador == 1 || mayorCantidadUnidades < cantidad) {
 			mayorCantidadUnidades = cantidad;
-			itemMasUnidades = tipo;
-			fabricanteMasUnidades = fabricante;			
+			mayorCantidadTipo = tipo;
+			mayorCantidadFabricante = fabricante;
 		}
 
-		if (mayorCantidadUnidades < cantidad) { 
-			mayorCantidadUnidades = cantidad;
-			itemMasUnidades = tipo;
-			fabricanteMasUnidades = fabricante;			
-		}
 
-		
+
+
 		//c) Cuántas unidades de jabones hay en total
 		if (tipo == "jabon") {
 			acumuladorJabon += cantidad;
@@ -125,11 +115,13 @@ function mostrar()
 
 	}
 
+
+  //HACERLO POR DOCUMENTO.WRITE !!!
 	//a)
 	alert("De los barbijos mas caros, la cantidad de unidades es: " + cantidadMasCaroBarbijo + " y el fabricante es " + fabricanteMasCaroBarbijo);
 
 	//b)
-	alert("El item con mas unidades es: " + itemMasUnidades + " y el fabricante es: " + fabricanteMasCaroBarbijo);
+	alert("El item con mas unidades es: " + mayorCantidadTipo + " y el fabricante es: " + fabricanteMasCaroBarbijo);
 
 	//c)
 	alert("La cantidad de jabones en total es " + acumuladorJabon);

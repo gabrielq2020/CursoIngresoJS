@@ -30,7 +30,6 @@ function mostrar()
     //Variables punto f)
     var acumuladorPrecio = 0;
     var promedioPrecioKilo;
-    
 
     while (respuesta) {
 
@@ -67,7 +66,7 @@ function mostrar()
       // a) El importe total a pagar , bruto sin descuento
       //Acumular precio para despues poder aplicar descuento
       acumuladorPrecio += precio;
-      
+
       //d) Informar el tipo de alimento más caro.
       if(banderaAlimentoMasCaro == 0) {
         banderaAlimentoMasCaro = 1
@@ -83,47 +82,37 @@ function mostrar()
       respuesta = confirm("Desea continuar?");
     }
 
-    switch (tipo) {
-      case "v":
-        tipo = "vegetal";
-        break;
-      case "a":
-        tipo = "animal";
-        break;
-
-      default:
-        tipo = "mezcla"
-        break;
-    }
-
-    
-    //b) el importe total a pagar con descuento(solo si corresponde)    
+    //b) el importe total a pagar con descuento(solo si corresponde)
     if (acumuladorPeso < 100) {
       descuento = 1;
     } else {
-      if (acumuladorPeso > 100 & acumuladorPeso < 300) {
+      if (acumuladorPeso > 100 && acumuladorPeso < 300) {
         descuento = 0.85;
       } else {
         descuento = 0.75;
       }
     }
 
-    precioFinal = precio * descuento;
+    precioFinal = acumuladorPrecio * descuento;
 
     //f) El promedio de precio por kilo en total.
-    promedioPrecioKilo = acumuladorPeso / acumuladorPrecio;
-    console.log(promedioPrecioKilo);
+    promedioPrecioKilo = acumuladorPeso / precioFinal;
 
-  alert("El importe total a pagar sin descuento es: " + acumuladorPrecio);
+    //Mostrar resultado por pantalla
+    document.write("El importe total a pagar sin descuento es: " + acumuladorPrecio + "<br>");
+    document.write("<br>");
+    document.write("El importe total a pagar con descuento es: " + precioFinal + "<br>");
+    document.write("<br>");
+    document.write("El alimento mas caro es: " + alimentoMasCaro + "<br>");
+    document.write("<br>");
+    document.write("El promedio de precio por kilo en total es: " + promedioPrecioKilo + "<br>");
 
-  alert("El importe total a pagar con descuento es: " + precioFinal);
-
-  alert("El alimento mas caro es: " + alimentoMasCaro);
-  
-  alert("El promedio de precio por kilo en total es: " + promedioPrecioKilo);
-
-/*     El importe total a pagar , bruto sin descuento y...
-  b) el importe total a pagar con descuento(solo si corresponde)
-  d) Informar el tipo de alimento más caro.
-  f) El promedio de precio por kilo en total. */
 }
+
+/*
+//Forma sencilla para un maximo, si tengo contador
+if(contador == 0 || alimentoMasCaro < precio) {
+  alimentoMasCaro = precio;
+  alimentoMasCaroTipo = tipo;
+}
+ */
