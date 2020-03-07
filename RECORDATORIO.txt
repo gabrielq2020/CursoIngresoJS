@@ -52,3 +52,9 @@ for (var cont = 0, var cont2 = 0 ; cont < 10; cont++){
 //(2) - ejecuta el codigo mientras se cumpla la condicion
 
 //(3) - modifica la variable 
+
+
+
+
+
+GITHUB DAMIANAUGUSTO1501
