@@ -88,19 +88,34 @@ function ComenzarIngreso ()
     while (isNaN(sueldo) || sueldo < 8000) {
         sueldo = prompt("El sueldo debe estar expresado en numero y ademas debe ser mayor a 8000.");
         sueldo = parseInt(sueldo);
-        document.getElementById("Sueldo") = "Sueldo: " + sueldo;
+        document.getElementById("Sueldo").value = "Sueldo: " + sueldo;
     }
 
     //Obtener legajo por prompt
     legajo = prompt("Ingrese legajo");
     legajo = parseInt(legajo);
     document.getElementById("Legajo").value = "Legajo: " + legajo;
+    console.log(legajo);
 
     //Validar legajo
     while (isNaN(legajo) || (legajo < 1000 || legajo > 10000)) {
         legajo = prompt("ERROR: El legajo ingresado debe ser entre 1000 y 9999.");
         legajo = parseInt(legajo);
         document.getElementById("legajo").value = legajo;
+        console.log(legajo);
+    }
+
+    //Obtener nacionalidad por prompt
+    nacionalidad = prompt("Ingrese legajo");
+    nacionalidad = parseInt(nacionalidad);
+    document.getElementById("Nacionalidad").value = "Nacionalidad: " + nacionalidad;
+    console.log(nacionalidad);
+
+    //Validar nacionalidad
+    while (isNaN(nacionalidad) || nacionalidad != A && nacionalidad != E && nacionalidad != N)) {
+        nacionalidad = prompt("ERROR: “A” para argentinos, “E” para extranjeros, “N” para nacionalizados.");
+        document.getElementById("Nacionalidad").value = nacionalidad;
+        console.log(nacionalidad);
     }
 
 }

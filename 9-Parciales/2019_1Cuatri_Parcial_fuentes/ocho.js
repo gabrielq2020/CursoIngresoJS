@@ -1,120 +1,133 @@
+/* Realizar el algoritmo que permita iterar el ingreso de dos datos, una letra y un número entre -100 y 100 (validar) hasta que el usuario
+quiera e informar al terminar el ingreso por document.write:
+a) La cantidad de números pares.
+b) La cantidad de números impares.
+c) La cantidad de ceros.
+d) El promedio de todos los números positivos ingresados.
+e) La suma de todos los números negativos.
+f) El número y la letra del máximo y el mínimo.
+ */
+
 function mostrar()
 {
+  var letra;
+  var numero;
   var respuesta = true;
 
-  //Variables para el ingreso de los datos
-  var nombre;
-  var cantidadDePersonas;
-  var cantidadDeDiasDeEstadia;
-  var formaDePago;
+  //Variables a)
+  var contadorNumerosPares = 0;
 
-  //Variables para realizar calculos
-  var maximoCantidadDePersonas;
-  var maximoNombreHuesped;
-  
-  var contadorPago;
-  var acumuladorDeDias = 0;
-  var contadorDias = 0;
+  //Variables b)
+  var contadorNumerosImpares = 0;
 
-  //Variables para contar formas de pago
-  var contadorEfectivo = 0;
-  var contadorTarjeta = 0;
-  var contadorQR = 0;
-  var formaDePagoMasUsada;
+  //Variables c)
+  var contadorCeros = 0;
 
-  var contadorDeReserva = 0;
+  //Variables d)
+  var acumuladorNumerosPositivos = 0;
+  var contadorNumerosPositivos = 0;
 
-  //Variables para promedio de maximo de días
-  var maximoDeDias;
-  var maximoDeDiasCantidadPersonas;
-  var promedio;
+  //Variables e)
+  var acumuladorNumerosNegativos = 0;
 
+  //Variables f)
+  var numeroMinimo;
+  var letraMinimo;
+  var numeroMaximo;
+  var letraMaximo;
 
+  do
+  {
+    do {
+      letra = prompt("Ingrese una letra.");
+      letra = letra.toLowerCase();
+    } while (!isNaN(letra) || letra == "");
 
-  do {
-        //Con cada carga de datos cuento un ingreso
-        contadorDeReserva++;
-        console.log(contadorDeReserva);
+    do {
+      numero = prompt("Ingrese la numero (entre -100 y 100).");
+      numero = parseInt(numero);
+    } while (isNaN(numero) || numero == "" || numero < -100 || numero > 100);
 
-        //Obtener y validar dato del nombre del huesped.
-        do {
-          nombre = prompt("Ingrese el nombre del huesped.");
-        } while (nombre == "" || !isNaN(nombre));
+    /* if (numero == 0)  //c)
+    {
+      contadorCeros++;      
+    } else if(numero % 2 == 0)
+      {
+      contadorNumerosPares; //a)
+      } else
+        {
+          contadorNumerosImpares; //b)
+        } */
 
-        //Obtener y validar dato de cantidad de huespedes.
-        do {
-          cantidadDePersonas = prompt("Ingrese la cantidad de huespedes.");
-          cantidadDePersonas = parseInt(cantidadDePersonas);
-        } while (cantidadDePersonas == "" || isNaN(cantidadDePersonas) || cantidadDePersonas < 1);
+    //a) La cantidad de números pares.
+    if(numero %2 == 0)
+    {
+      contadorNumerosPares++;
+    }
 
-        //Obtener y validar cantidad de dias de estadia.
-        do {
-          cantidadDeDiasDeEstadia = prompt("Ingrese la cantidad de días de estadia.");
-          cantidadDeDiasDeEstadia = parseInt(cantidadDeDiasDeEstadia);
-        } while (cantidadDeDiasDeEstadia == "" || isNaN(cantidadDeDiasDeEstadia) || cantidadDeDiasDeEstadia < 1);
+    //a) La cantidad de números impares.
+    if(numero %2 != 0)
+    {
+      contadorNumerosImpares++;
+    }
 
-        //Obtener y validar forma de pago.
-        do {
-          formaDePago = prompt("Ingrese la forma de pago: efectivo, tarjeta o QR.");
-          formaDePago = formaDePago.toLowerCase();
-        } while (!isNaN(formaDePago) || formaDePago != "efectivo" && formaDePago != "tarjeta" && formaDePago != "qr");
+    //c) La cantidad de ceros.
+    if (numero == 0)
+    {
+      contadorCeros++;      
+    }
 
+    //d) El promedio de todos los números positivos ingresados.
+    if (numero > 0) {
+      acumuladorNumerosPositivos += numero;
+      contadorNumerosPositivos++;
+    }
 
-        //Obtener que huesped llevo la cantidad maxima de huespedes y dicha cantidad.
-        if(contadorDeReserva == 1 || maximoCantidadDePersonas < cantidadDePersonas){
-          maximoNombreHuesped = nombre;
-          maximoCantidadDePersonas = cantidadDePersonas;
-        }
+    //e) La suma de todos los números negativos.
+    if (numero < 0)
+    {
+      acumuladorNumerosNegativos += numero;      
+    }
 
-        //
-        if(contadorDeReserva == 1 || maximoDeDias < cantidadDeDiasDeEstadia){
-          maximoDeDias = cantidadDeDiasDeEstadia;
-          maximoDeDiasCantidadPersonas = cantidadDePersonas;
-        }
+    //f) El número y la letra del máximo y el mínimo.
+    if (contadorCeros == 1 || contadorNumerosPares == 1 || contadorNumerosImpares == 1 || numeroMaximo < numero)
+    {
+      numeroMaximo = numero;
+      letraMaximo = letra;      
+    }
 
-        //Contar formas de pago
-        switch (formaDePago) {
-          case "qr":
-            contadorQR++;
-            break;
-          case "efectivo":
-            contadorEfectivo++;
-            break;
-          default:
-            contadorTarjeta++;
-            break;
-        }
-
-        //Acumular cantidad de dias para luego realizar el promedio
-        acumuladorDeDias += cantidadDeDiasDeEstadia;
-        console.log(acumuladorDeDias);
-
-    //Confirmar si se desea seguir cargando datos
-    respuesta = confirm("Desea continuar?");
-
+    if (contadorCeros == 1 || contadorNumerosPares == 1 || contadorNumerosImpares == 1 || numeroMinimo > numero)
+    {
+      numeroMinimo = numero;
+      letraMinimo = letra;
+    }
+    
+    respuesta = confirm("Desea cargar mas datos?");
   } while (respuesta);
 
-  //Calcular el promedio
-  promedio = acumuladorDeDias / contadorDeReserva;
-
-  //Obtener forma de pago mas usada
-  if (contadorQR > contadorEfectivo && contadorQR > contadorTarjeta){
-    formaDePagoMasUsada = "qr";
-  } else {
-    if(contadorTarjeta > contadorEfectivo){
-      formaDePagoMasUsada = "tarjeta";
-    } else {
-      formaDePagoMasUsada = "efectivo";
-      }
+  //d) El promedio de todos los números positivos ingresados.
+  if (contadorNumerosPositivos == 0)
+  {
+    promedioNumerosPositivos = "No se ingresaron numeros positivos";    
+  } else
+    {
+      promedioNumerosPositivos = acumuladorNumerosPositivos / contadorNumerosPositivos;
     }
+
+
+  document.write("La cantidad de números pares es " + contadorNumerosPares + "<br>");
+  document.write("<br>");
+  document.write("La cantidad de números impares es " + contadorNumerosImpares + "<br>");
+  document.write("<br>");
+  document.write("La cantidad de ceros es " + contadorCeros + "<br>");
+  document.write("<br>");
+  document.write("El promedio de todos los números positivos ingresados es " + promedioNumerosPositivos + "<br>");
+  document.write("<br>");
+  document.write("La suma de todos los números negativos es " + acumuladorNumerosNegativos + "<br>");
+  document.write("<br>");
+  document.write("El número y la letra del mínimo es: " + numeroMinimo + ", " + letraMinimo + "<br>");
+  document.write("<br>");
+  document.write("El número y la letra del máximo es: " + numeroMaximo + ", " + letraMaximo + "<br>");
+  document.write("<br>");
   
-
-  //Mostrar informacion por document write
-  document.write("El huesped llamado " + maximoNombreHuesped + " trajo al mayor numero de huespedes: " + maximoCantidadDePersonas + "<br>");
-  document.write("<br>");
-  document.write("La forma de pago mas utilizada es: " + formaDePagoMasUsada + "<br>");
-  document.write("<br>");
-  document.write("El promedio de cantidad de días por reserva es " + promedio + "<br>");
-
-
 }
