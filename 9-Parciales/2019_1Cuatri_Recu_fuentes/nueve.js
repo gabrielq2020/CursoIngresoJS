@@ -48,22 +48,22 @@ function mostrar()
         do {
             nombre = prompt("Ingresar el nombre");
             nombre = nombre.toLowerCase();
-        } while (!inNaN(nombre) || nombre == "");
+        } while (!isNaN(nombre) || nombre == "");
 
         do {
             edad = prompt("Ingresar la edad");
             edad = parseInt(edad);
-        } while (inNaN(edad) || edad == "" || edad < 0 || edad > 10000);
+        } while (isNaN(edad) || edad == "" || edad < 0 || edad > 10000);
 
         do {
             sexo = prompt("Ingresar el sexo (f para femenino o m para masculino)");
             sexo = sexo.toLowerCase();
-        } while (!inNaN(sexo) || sexo == "" || sexo != "f" && sexo != "m");
+        } while (!isNaN(sexo) || sexo == "" || sexo != "f" && sexo != "m");
 
         do {
             notaFinal = prompt("Ingresar los notaFinal de alimento");
             notaFinal = parseInt(notaFinal);
-        } while (inNaN(notaFinal) || notaFinal == "" || notaFinal < 0 || notaFinal > 10);
+        } while (isNaN(notaFinal) || notaFinal == "" || notaFinal < 0 || notaFinal > 10);
 
         //a) La cantidad de varones aprobados
         if (sexo == "m" && notaFinal > 6)

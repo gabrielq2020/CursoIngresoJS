@@ -1,4 +1,4 @@
-/* Realizar el algoritmo que permita iterar el ingreso de dos datos de un vehiculo, un color (rojo verde o amarillo) y un valor entre 0 y 10000 hasta que el usuario quiera e informar al terminar el ingreso por document.write:
+/* Realizar el algoritmo que permita iterar el ingreso de dos datos de un vehiculo, un color (rojo verde o amarillo) y un precio entre 0 y 10000 hasta que el usuario quiera e informar al terminar el ingreso por document.write:
 a) La cantida de rojos
 b) La cantidad de rojos con precio mayor a 5000
 c) La cantidad de vehiculos con precio inferior a 5000
@@ -8,7 +8,7 @@ e) El mas caro y su color */
 function mostrar()
 {
     var color;
-    var valor;
+    var precio;
     var respuesta = true;
 
     //Variables a)
@@ -30,12 +30,12 @@ function mostrar()
         do {
             color = prompt("Ingresar el color del vehiculo (rojo, verde o amarillo)");
             color = color.toLowerCase();
-        } while (!inNaN(color) || color == "" || color != "rojo" && color != "verde" && color != "amarillo");
+        } while (!isNaN(color) || color == "" || color != "rojo" && color != "verde" && color != "amarillo");
 
         do {
-            kilos = prompt("Ingresar los kilos de alimento");
-            kilos = parseInt(kilos);
-        } while (inNaN(kilos) || kilos == "" || kilos < 0 || kilos > 10000);
+            precio = prompt("Ingresar el precio del vehiculo");
+            precio = parseInt(precio);
+        } while (isNaN(precio) || precio == "" || precio < 0 || precio > 10000);
 
         //a) La cantida de rojos
         if (color == "rojo") {

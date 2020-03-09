@@ -28,12 +28,12 @@ function mostrar()
         do {
             kilos = prompt("Ingresar los kilos de alimento");
             kilos = parseInt(kilos);
-        } while (inNaN(kilos) || kilos == "" || kilos < 0 || kilos > 500);
+        } while (isNaN(kilos) || kilos == "" || kilos < 0 || kilos > 500);
 
         do {
             sabor = prompt("Ingresar el sabor del alimento (carne, vegetales o pollo)");
             sabor = sabor.toLowerCase();
-        } while (!inNaN(sabor) || sabor == "" || sabor != "carne" && sabor != "vegetales" && sabor != "pollo");
+        } while (!isNaN(sabor) || sabor == "" || sabor != "carne" && sabor != "vegetales" && sabor != "pollo");
 
         //a) El promedio de los kilos totales.
         acumuladorKilos += kilos;
@@ -51,6 +51,9 @@ function mostrar()
         }
 
     } while (contadorAlimentos < 10);
+
+    //a) El promedio de los kilos totales
+    promedioKilosTotal = acumuladorKilos / contadorAlimentos;
 
     //c) La cantidad de sabor carne y el promedio de kilos de sabor carne
     promedioSaborCarne = acumuladorKilos / acumuladorKilosSaborCarne;
